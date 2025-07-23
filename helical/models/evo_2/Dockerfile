@@ -20,6 +20,7 @@ ENV CUDNN_PATH=/opt/conda/lib/python3.11/site-packages/nvidia/cudnn
 RUN pip install transformer-engine[pytorch]==1.13.0
 
 RUN git clone --recurse-submodules https://github.com/ArcInstitute/evo2.git
+RUN git reset --hard a796302
 RUN cd evo2 && pip install .
 
 ##Overwriting the torch version from Vortex to make it work.
