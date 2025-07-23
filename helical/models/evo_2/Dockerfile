@@ -21,9 +21,7 @@ RUN pip install transformer-engine[pytorch]==1.13.0
 
 RUN git clone --recurse-submodules https://github.com/ArcInstitute/evo2.git
 
-RUN cd evo2
-RUN git reset --hard a796302
-RUN pip install .
+RUN cd evo2 && git reset --hard a796302 && pip install .
 
 ##Overwriting the torch version from Vortex to make it work.
 RUN pip install torchvision torch==2.6.0
